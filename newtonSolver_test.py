@@ -5,7 +5,7 @@ import pandas as pd
 
 if __name__ == '__main__':
 
-    func = lambda x, a, b, c : a * x * x + b * x + c
+    func = lambda x, a, b, c : a * x * x + b * x + c + b * c * x * x
 
     dis = lambda x, y, a, b, c : (y - func(x, a, b, c)) ** 2
     
@@ -16,5 +16,5 @@ if __name__ == '__main__':
     y = func(x, 3, 1, -2)
 
     df = pd.DataFrame({0: x, 1: y})
-    print(solver.solve(df, [1, 1, 1]))
+    print(solver.solve(df, [1, 1, -3]))
     

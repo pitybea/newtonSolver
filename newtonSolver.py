@@ -25,7 +25,7 @@ class newtonSolver:
         print([f(*inp) for f in self.gradient_functions])
         print([[h(*inp) for h in hs] for hs in self.hessian_functions])
         
-    def solve(self, df, init_parameters, tolerence = 1e-5, iter_rounds = 50):
+    def solve(self, df, init_parameters, tolerence = 1e-9, iter_rounds = 500):
         assert type(df) is pd.DataFrame
         assert df.shape[1] == len(self.variables)
         assert len(init_parameters) == len(self.parameters)
